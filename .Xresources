@@ -1,0 +1,50 @@
+! Color scheme from https://github.com/morhetz/gruvbox-contrib/blob/master/xresources/gruvbox-dark.xresources
+
+#define HardContrastBackground      #1d2021
+#define MediumContrastBackground    #282828
+#define SoftContrastBackground      #32302f
+#define Foreground                  #ebdbb2
+
+#define Black       MediumContrastBackground
+#define DarkGrey    #928374
+#define DarkRed     #cc241d
+#define Red         #fb4934
+#define DarkGreen   #98971a
+#define Green       #b8bb26
+#define DarkYellow  #d79921
+#define Yellow      #fabd2f
+#define DarkBlue    #458588
+#define Blue        #83a598
+#define DarkMagenta #b16286
+#define Magenta     #d3869b
+#define DarkCyan    #689d6a
+#define Cyan        #8ec07c
+#define LightGrey   #a89984
+#define White       Foreground
+
+*background: MediumContrastBackground
+*foreground: Foreground
+*color0:  Black
+*color8:  DarkGrey
+*color1:  DarkRed
+*color9:  Red
+*color2:  DarkGreen
+*color10: Green
+*color3:  DarkYellow
+*color11: Yellow
+*color4:  DarkBlue
+*color12: Blue
+*color5:  DarkMagenta
+*color13: Magenta
+*color6:  DarkCyan
+*color14: Cyan
+*color7:  LightGrey
+*color15: White
+
+*.normbgcolor:      Black
+*.normbordercolor:  DarkCyan
+*.normfgcolor:      DarkBlue
+*.selbgcolor:       DarkCyan
+*.selbordercolor:   DarkYellow
+*.selfgcolor:       Black
+*.font:             Inconsolata:monospace:size=10

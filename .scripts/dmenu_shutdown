@@ -1,0 +1,2 @@
+#!/bin/sh
+echo Shutdown | dmenu -i -p "Are you sure?" && shutdown 0

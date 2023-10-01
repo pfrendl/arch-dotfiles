@@ -1,0 +1,3 @@
+#!/bin/sh
+path=~/.config/wallpaper.png
+cp "$1" "$path" && xwallpaper --zoom "$path" 

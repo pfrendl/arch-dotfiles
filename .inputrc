@@ -1,0 +1,2 @@
+# fix DEL key for st terminal
+set enable-keypad on

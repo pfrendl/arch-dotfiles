@@ -1,0 +1,4 @@
+#!/bin/sh
+radio_file=~/.config/radio_channels
+radio_name=$(< "$radio_file" awk -F, '{ print $1 }' | dmenu -p "Choose radio channel" -i -l 10)
+[ -n "$radio_name" ] && awk -F, -v radio_name="$radio_name" '$1 == radio_name { print $2 }' "$radio_file" | xargs mpv
