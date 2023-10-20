@@ -1,0 +1,2 @@
+#!/bin/sh
+free | awk '/^Mem/ {printf "%2.0f%", 100*$3/$2}'

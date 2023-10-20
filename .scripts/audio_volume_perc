@@ -1,0 +1,5 @@
+#!/bin/sh
+sink_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+sink_volume_perc=$(pactl get-sink-volume @DEFAULT_SINK@ | sed q | awk '{printf "%4s", $5}')
+icon=$([ "$sink_muted" = "yes" ] && echo "" || echo "")
+echo "${icon}${sink_volume_perc}"
