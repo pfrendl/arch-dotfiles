@@ -2,5 +2,5 @@
 [ -f ~/.Xresources ] && xrdb ~/.Xresources
 [ -f ~/.config/wallpaper.png ] && xwallpaper --zoom ~/.config/wallpaper.png
 xbindkeys
-dwmblocks &
+mustat | xargs -I% xsetroot -name % &
 exec dwm
