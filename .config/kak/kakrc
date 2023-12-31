@@ -1,0 +1,26 @@
+colorscheme gruvbox-dark
+
+add-highlighter global/ number-lines -relative -hlcursor
+add-highlighter global/ show-matching
+
+set-option global tabstop 4
+set-option global indentwidth 4
+map global insert <tab> '    '
+
+eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak
+hook global WinSetOption filetype=python %{
+    lsp-enable-window
+    lsp-inlay-diagnostics-enable global
+    lsp-auto-hover-insert-mode-enable
+    set-option window formatcmd 'isort -q - | black -q -'
+}
+hook global BufWritePre .*\.py format
+
+hook global WinSetOption filetype=python %{
+    hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+    hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+    hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+    hook -once -always window WinSetOption filetype=.* %{
+        remove-hooks window semantic-tokens
+    }
+}
