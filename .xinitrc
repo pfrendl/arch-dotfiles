@@ -3,4 +3,5 @@
 [ -f ~/.config/wallpaper.png ] && xwallpaper --zoom ~/.config/wallpaper.png
 mustat | xargs -I% xsetroot -name % &
 sxhkd &
+picom --backend glx &
 exec bspwm
